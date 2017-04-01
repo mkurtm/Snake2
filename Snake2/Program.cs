@@ -14,8 +14,10 @@ namespace Snake2
             char a = '*';
             Draw(x, y, a);
             Draw(x + 1, y + 1, a);
+            Draw(x + 12, y + 11, a);
 
-                       
+
+
 
 
             Console.ReadLine();
