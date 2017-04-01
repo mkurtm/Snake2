@@ -13,14 +13,7 @@ namespace Snake2
             Console.WriteLine("kk");
             Console.ReadLine();
 
-            Console.ReadLine();
-
-            Console.WriteLine("qwe");
-            Console.ReadLine();
-
-            Console.WriteLine("111111");
-            Console.ReadLine();
-
+        
 
            
         }
