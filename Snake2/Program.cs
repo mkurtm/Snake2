@@ -15,6 +15,9 @@ namespace Snake2
 
             Console.ReadLine();
 
+            Console.WriteLine("qwe");
+            Console.ReadLine();
+
 
            
         }
