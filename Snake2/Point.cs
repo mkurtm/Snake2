@@ -15,7 +15,7 @@ namespace Snake2
         public Point()
 
         {
-
+            Console.WriteLine("Waiting");
         }
 
         public Point (int  _x, int _y, char _sym)
