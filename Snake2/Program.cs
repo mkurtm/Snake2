@@ -13,6 +13,9 @@ namespace Snake2
             Console.WriteLine("kk");
             Console.ReadLine();
 
+            Console.ReadLine();
+
+
            
         }
     }
