@@ -10,6 +10,12 @@ namespace Snake2
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("kk");
+            Console.ReadLine();
+
+              
+            
+            Console.ReadLine();
         }
     }
 }
