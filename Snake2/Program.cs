@@ -10,12 +10,25 @@ namespace Snake2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("kk");
+            int x = 1, y = 3;
+            char a = '*';
+            Draw(x, y, a);
+            Draw(x + 1, y + 1, a);
+
+                       
+
+
             Console.ReadLine();
 
         
 
            
+        }
+
+        static void Draw (int x , int y, char a)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.WriteLine(a);
         }
     }
 }
