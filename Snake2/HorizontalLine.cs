@@ -16,8 +16,7 @@ namespace Snake2
             
             for (int x=xStart; x<=xEnd; x++)
             {
-                Point p = new Point(x, y, sym);
-                pList.Add(p);
+                pList.Add(new Point(x, y, sym));
             }
             
 
