@@ -39,11 +39,7 @@ namespace Snake2
             //Snake drawing
             Point p = new Point(4, 5, '*');
             Snake s = new Snake(p, 4, Directions.RIGHT);
-            s.Draw();                       
-
-
-
-
+            s.Draw();   
                 
             Console.ReadLine();          
         }
