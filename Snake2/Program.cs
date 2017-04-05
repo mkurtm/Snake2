@@ -21,6 +21,9 @@ namespace Snake2
             //VerticalLine vLine = new VerticalLine(5, 2, 10, '*');
             //vLine.Draw();
 
+
+            //Отрисовка Рамки
+
             Console.SetBufferSize(80, 25);
 
             HorizontalLine hLineUp = new HorizontalLine(1, 9, 1, '*');
@@ -33,12 +36,10 @@ namespace Snake2
             vLineLeft.Draw();
             vLineRight.Draw();
 
-
-            Employee Ivan = new Employee();
-            Ivan.salary = 10000;
-            Ivan.age = 20;
-            Console.SetCursorPosition(10, 10);
-            Console.WriteLine("Aaaaa " + Ivan.age + "sasas " + Ivan.salary);
+            //Snake drawing
+            Point p = new Point(4, 5, '*');
+            Snake s = new Snake(p, 4, Directions.RIGHT);
+            s.Draw();                       
 
 
 

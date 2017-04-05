@@ -26,11 +26,41 @@ namespace Snake2
         
         }
 
+        public Point(Point p)
+        {
+            x = p.x;
+            y = p.y;
+            sym = p.sym;
+        }
+
+        public void Move(int Offset, Directions direction)
+        {
+            if (direction == Directions.RIGHT)
+            {
+                x = x + Offset;
+            }
+            else if (direction == Directions.LEFT)
+            {
+                x = x - Offset;
+            }
+            else if (direction == Directions.UP)
+            {
+                y = y + Offset;
+            }
+            else if (direction == Directions.DOWN)
+            {
+                y = y - Offset;
+            }
+
+
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
             Console.WriteLine(sym);
         }
+
 
     }
 
