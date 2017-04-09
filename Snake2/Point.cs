@@ -45,11 +45,11 @@ namespace Snake2
             }
             else if (direction == Directions.UP)
             {
-                y = y + Offset;
+                y = y - Offset;
             }
             else if (direction == Directions.DOWN)
             {
-                y = y - Offset;
+                y = y + Offset;
             }
 
 

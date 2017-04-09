@@ -11,18 +11,7 @@ namespace Snake2
     {
         static void Main(string[] args)
         {
-            //Point p1 = new Point(1, 3, '*');
-            //Point p2 = new Point(11, 3, '&');      
-            //p1.Draw();
-            //p2.Draw();
-
-            //HorizontalLine hline = new HorizontalLine(3,10,10,'#');
-            //hline.Draw();
-
-            //VerticalLine vLine = new VerticalLine(5, 2, 10, '*');
-            //vLine.Draw();
-
-
+            
             //Отрисовка Рамки
 
             Console.SetBufferSize(80, 25);
@@ -41,18 +30,19 @@ namespace Snake2
             Point p = new Point(4, 5, '*');
             Snake snake = new Snake(p, 4, Directions.RIGHT);
             snake.Draw();
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            
-            Console.ReadLine();          
-        }
 
-        
+
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.KeyHandle(key.Key);                    
+                }
+                Thread.Sleep(100);
+                snake.Move();
+            }            
+                  
+        }        
     }
 }
