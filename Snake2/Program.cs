@@ -31,7 +31,7 @@ namespace Snake2
             Snake snake = new Snake(p, 4, Directions.RIGHT);
             snake.Draw();
 
-
+            //Snake moving
             while (true)
             {
                 if (Console.KeyAvailable)
