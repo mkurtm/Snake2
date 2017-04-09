@@ -16,10 +16,10 @@ namespace Snake2
 
             Console.SetBufferSize(80, 25);
 
-            HorizontalLine hLineUp = new HorizontalLine(1, 9, 1, '*');
-            HorizontalLine hLineDown = new HorizontalLine(1, 9, 9, '*');
-            VerticalLine vLineLeft = new VerticalLine(1, 1, 9, '*');
-            VerticalLine vLineRight = new VerticalLine(9, 1, 9, '*');
+            HorizontalLine hLineUp = new HorizontalLine(1, 78, 1, '*');
+            HorizontalLine hLineDown = new HorizontalLine(1, 78, 24, '*');
+            VerticalLine vLineLeft = new VerticalLine(1, 1, 24, '*');
+            VerticalLine vLineRight = new VerticalLine(78, 1, 24, '*');
 
             hLineDown.Draw();
             hLineUp.Draw();
@@ -34,6 +34,11 @@ namespace Snake2
             //Snake moving
             while (true)
             {
+                FoodCreator food = new FoodCreator(80, 25, '$');
+
+
+
+
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
