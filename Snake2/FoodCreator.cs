@@ -8,15 +8,25 @@ namespace Snake2
 {
     class FoodCreator
     {
-        private int v1;
-        private int v2;
-        private char v3;
+        private int xmax;
+        private int ymax;
+        private char sym;
 
-        public FoodCreator(int v1, int v2, char v3)
+        Random random = new Random();
+
+        public FoodCreator(int xmax, int ymax, char sym)
         {
-            this.v1 = v1;
-            this.v2 = v2;
-            this.v3 = v3;
+            this.xmax = xmax;
+            this.ymax = ymax;
+            this.sym = sym;                     
+        
+        }
+
+        public Point CreateFood()
+        {
+            int x = random.Next(xmax);
+            int y = random.Next(ymax);
+            return new Point(x, y, sym);
         }
     }
 }

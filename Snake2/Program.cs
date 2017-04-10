@@ -16,10 +16,10 @@ namespace Snake2
 
             Console.SetBufferSize(80, 25);
 
-            HorizontalLine hLineUp = new HorizontalLine(1, 9, 1, '*');
-            HorizontalLine hLineDown = new HorizontalLine(1, 9, 9, '*');
-            VerticalLine vLineLeft = new VerticalLine(1, 1, 9, '*');
-            VerticalLine vLineRight = new VerticalLine(9, 1, 9, '*');
+            HorizontalLine hLineUp = new HorizontalLine(1, 79, 1, '*');
+            HorizontalLine hLineDown = new HorizontalLine(1, 79, 22, '*');
+            VerticalLine vLineLeft = new VerticalLine(1, 1, 22, '*');
+            VerticalLine vLineRight = new VerticalLine(79, 1, 22, '*');
 
             hLineDown.Draw();
             hLineUp.Draw();
@@ -27,25 +27,40 @@ namespace Snake2
             vLineRight.Draw();
 
             //Snake drawing
+
             Point p = new Point(4, 5, '*');
             Snake snake = new Snake(p, 4, Directions.RIGHT);
             snake.Draw();
 
             //Snake moving
+
+            //Make food
+
+            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+            Point food = foodCreator.CreateFood();
+            food.Draw();
+
+
             while (true)
             {
-                FoodCreator food = new FoodCreator(80, 25, '$');
+                if (snake.Eat(food))
+                {
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snake.Move();
+                }
 
-
-
+                Thread.Sleep(100);
 
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
                     snake.KeyHandle(key.Key);                    
                 }
-                Thread.Sleep(100);
-                snake.Move();
+                
             }            
                   
         }        

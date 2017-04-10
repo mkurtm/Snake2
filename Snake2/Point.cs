@@ -67,7 +67,12 @@ namespace Snake2
             Console.WriteLine(sym);
         }
 
-
+        internal bool IsHit(Point p)
+        {
+            return p.x == this.x && this.y == p.y;
+               
+            
+        }
     }
 
   
