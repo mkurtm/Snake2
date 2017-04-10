@@ -70,8 +70,6 @@ namespace Snake2
         internal bool IsHit(Point p)
         {
             return p.x == this.x && this.y == p.y;
-               
-            
         }
     }
 
