@@ -51,8 +51,6 @@ namespace Snake2
             {
                 y = y + Offset;
             }
-
-
         }
 
         internal void Clear()
