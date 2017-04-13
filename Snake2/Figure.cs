@@ -16,7 +16,18 @@ namespace Snake2
             {
                 p.Draw();
             }
+        }
 
+        public virtual bool IsHit(Point target)
+        {
+            foreach (Point p in pList)
+            {
+                if (p.IsHit(target))
+                {
+                    return true;                    
+                }                    
+            }
+            return false;
         }
     }
 }

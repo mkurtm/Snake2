@@ -43,6 +43,11 @@ namespace Snake2
             return p;
         }
 
+        public Point GetHead()
+        {
+            return (pList.Last());            
+        }
+
         public void KeyHandle(ConsoleKey key)
         {
             if (key == ConsoleKey.LeftArrow)
@@ -68,5 +73,18 @@ namespace Snake2
             else
                 return false;
         }
+
+        public override bool IsHit(Point target)
+        {
+            for (int i = 0; i<pList.Count()-1; i++)                  
+            {
+                if (pList[i].IsHit(target))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 }

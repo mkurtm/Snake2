@@ -11,28 +11,18 @@ namespace Snake2
     {
         static void Main(string[] args)
         {
-            
-            //Отрисовка Рамки
-
             Console.SetBufferSize(80, 25);
 
-            HorizontalLine hLineUp = new HorizontalLine(1, 79, 1, '*');
-            HorizontalLine hLineDown = new HorizontalLine(1, 79, 22, '*');
-            VerticalLine vLineLeft = new VerticalLine(1, 1, 22, '*');
-            VerticalLine vLineRight = new VerticalLine(79, 1, 22, '*');
+            //Создаем и отрисовываем стены
 
-            hLineDown.Draw();
-            hLineUp.Draw();
-            vLineLeft.Draw();
-            vLineRight.Draw();
+            Wall wall = new Wall(80, 25, '+');
+            wall.Draw();
 
             //Snake drawing
 
             Point p = new Point(4, 5, '*');
             Snake snake = new Snake(p, 4, Directions.RIGHT);
             snake.Draw();
-
-            //Snake moving
 
             //Make food
 
@@ -41,8 +31,20 @@ namespace Snake2
             food.Draw();
 
 
+
             while (true)
             {
+                //Делаем проверку на пересечение головы и стены либо тела змеики
+                Point head = new Point(snake.GetHead());
+
+                if (wall.IsHit(head) || snake.IsHit(head))
+                {
+                    Console.Clear();
+                    Console.WriteLine("Game over");
+                    Thread.Sleep(3000);
+                    break;
+                }
+
                 if (snake.Eat(food))
                 {
                     food = foodCreator.CreateFood();

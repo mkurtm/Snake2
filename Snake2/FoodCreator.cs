@@ -24,8 +24,8 @@ namespace Snake2
 
         public Point CreateFood()
         {
-            int x = random.Next(xmax);
-            int y = random.Next(ymax);
+            int x = random.Next(xmax-2);
+            int y = random.Next(ymax-2);
             return new Point(x, y, sym);
         }
     }
